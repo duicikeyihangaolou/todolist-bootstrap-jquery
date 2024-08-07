@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Todo-List</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.bootcdn.net/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.2/css/bootstrap.css"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+
+      <!-- 告警 -->
+      <div class="alert alert-success fixed-top" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <span id="alertContent">
+          <strong>创建成功！</strong>
+        </span>
+      </div>
+      <h1 class="text-center display-5 mt-5">任务列表</h1>
+      <div class="row mt-5">
+        <div class="col-md-7">
+          <div class="form-group">
+            <label for="inpNewTask">新建任务</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inpNewTask"
+              maxlength="20"
+              aria-describedby="newTaskHelp"
+              placeholder="请输入任务名称"
+            />
+            <small id="newTaskHelp" class="form-text text-muted"
+              >任务的简短描述，最长20个字符</small
+            >
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="row">
+            <div class="col-6 col-sm-3 col-md-6 pl-1 pr-1 add-btn-row">
+              <button type="button" class="btn btn-success col" disabled id="btnAdd">
+                <i class="bi bi-plus-square"></i> 添加
+              </button>
+            </div>
+            <div class="col-3 col-sm-3 col-md-3 pl-1 pr-1 add-btn-row">
+              <button type="button" class="btn btn-primary col" id="btnRefresh">
+                <i class="bi bi-arrow-repeat"></i> 刷新
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul class="row list-group m-2" id="ulTasks"></ul>
+      <table class="table table-stiped m-2" id="task-table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">任务名称</th>
+            <th scope="col">任务描述</th>
+            <th scope="col">操作</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+
+      <!-- edit modal -->
+      <div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">编辑任务</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="editForm">
+                <div class="form-group">
+                  <label for="todoName" class="col-form-label">任务名称:</label>
+                  <input type="text" class="form-control" id="todoName" required maxlength="20" />
+                </div>
+                <div class="form-group">
+                  <label for="todoDescription" class="col-form-label">任务描述:</label>
+                  <select class="form-control" id="todoDescription">
+                    <option value="new">新建</option>
+                    <option value="doing">进行中</option>
+                    <option value="done">已完成</option>
+                  </select>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                  <button type="submit" class="btn btn-primary" id="saveButton">保存</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- delete modal -->
+      <div
+        class="modal fade"
+        id="deleteModal"
+        tabindex="-1"
+        aria-labelledby="deleteModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="deleteModalLabel">删除任务</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p id="delMessage">确认删除任务吗？</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+              <button type="button" class="btn btn-primary" id="delConfirmButton">确认</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
