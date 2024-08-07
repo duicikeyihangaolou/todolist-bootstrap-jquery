@@ -57,10 +57,10 @@ Github：<https://github.com/wu-wenxiang/todolist-bootstrap-jquery>
 
 主要参考：
 
-+ 布局：https://getbootstrap.com/docs/4.6/layout/grid/
-+ 列表：https://getbootstrap.com/docs/4.6/content/tables/
-+ 表单：https://getbootstrap.com/docs/4.6/components/forms/
-+ 按钮：https://getbootstrap.com/docs/4.6/components/buttons/
++ 布局：<https://getbootstrap.com/docs/4.6/layout/grid/>
++ 列表：<https://getbootstrap.com/docs/4.6/content/tables/>
++ 表单：<https://getbootstrap.com/docs/4.6/components/forms/>
++ 按钮：<https://getbootstrap.com/docs/4.6/components/buttons/>
 
 基于上述参考编写页面内容。
 
