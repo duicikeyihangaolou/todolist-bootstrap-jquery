@@ -2,11 +2,11 @@
 
 This is a project with bootstrap, jquery.
 
-Github：<https://github.com/wu-wenxiang/todolist-bootstrap-jquery>
+Github：<https://github.com/duicikeyihangaolou/todolist-bootstrap-jquery>
 
 同步到 Gitee：<https://gitee.com/wu-wen-xiang/todolist-bootstrap-jquery>
 
-后端服务 fastapi todolist demo，[Github](https://github.com/wu-wenxiang/fastapi-todo-list-demo)，[Gitee](https://gitee.com/wu-wen-xiang/fastapi-todo-list-demo)
+后端服务 fastapi todolist demo，[Github](https://github.com/duicikeyihangaolou/fastapi-todo-list-demo)，[Gitee](https://gitee.com/wu-wen-xiang/fastapi-todo-list-demo)
 
 ## 从头搭建带有 bootstrap, jquery 的前端界面
 
